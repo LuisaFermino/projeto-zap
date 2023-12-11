@@ -1,9 +1,10 @@
 import "./App.css";
+import TelaInicial from "./TelaInicial";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <TelaInicial />
     </div>
   );
 }

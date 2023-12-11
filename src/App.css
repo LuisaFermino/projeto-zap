@@ -1,0 +1,32 @@
+body {
+  background-color: #fb6b6b;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-grande {
+  min-width: 35vw;
+  min-height: 25vh;
+}
+
+.titulo {
+  font-size: 34px;
+  font-family: "Righteous", sans-serif;
+  color: #ffffff;
+}
+
+.botao-iniciar {
+  border: 1px solid #d70900;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #d70900;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Recursive", sans-serif;
+  width: 75vw;
+  height: 10vh;
+}
