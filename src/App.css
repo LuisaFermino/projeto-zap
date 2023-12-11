@@ -1,32 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #fb6b6b;
+  height: 100vh;
 }
 
 .App {
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.tela-inicial {
+  margin: 0 auto;
+}
 
+.container-logo {
+  display: flex;
+  justify-content: center;
+}
 .logo-grande {
-  min-width: 35vw;
-  min-height: 25vh;
+  width: 100px;
+  height: 130px;
 }
 
 .titulo {
   font-size: 34px;
   font-family: "Righteous", sans-serif;
   color: #ffffff;
+  text-align: center;
+  padding: 35px 35px;
 }
 
 .botao-iniciar {
   border: 1px solid #d70900;
+  box-shadow: 1px 2px 5px #d70900;
   border-radius: 5px;
   background-color: #ffffff;
   color: #d70900;
   font-size: 18px;
   font-weight: 400;
   font-family: "Recursive", sans-serif;
-  width: 75vw;
-  height: 10vh;
+  width: 246px;
+  height: 54px;
+  cursor: pointer;
 }
