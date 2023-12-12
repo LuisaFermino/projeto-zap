@@ -5,16 +5,20 @@
 body {
   background-color: #fb6b6b;
   height: 100vh;
+  overflow-y: scroll;
 }
 
 .App {
   height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
+/* Tela inicial */
 .tela-inicial {
   margin: 0 auto;
+  display: none;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .container-logo {
@@ -46,4 +50,79 @@ body {
   width: 246px;
   height: 54px;
   cursor: pointer;
+}
+
+/* Deck */
+.logo-deck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.logo-pequeno {
+  width: 52px;
+  height: 60px;
+}
+
+.titulo-deck {
+  font-size: 30px;
+  font-family: "Righteous", sans-serif;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 20px;
+}
+
+/* estrutura do deck*/
+.container-deck {
+  padding-top: 3vh;
+}
+.deck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 3vh;
+}
+
+.flashcard {
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 270px;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pergunta {
+  font-family: "Recursive", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-left: 5vw;
+}
+
+ion-icon {
+  font-size: 28px;
+  margin-right: 5vw;
+}
+
+/* Rodapé Deck*/
+.rodape-deck {
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.texto-concluidos {
+  color: #333333;
+  font-family: "Recursive", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
