@@ -2,7 +2,7 @@ import "./App.css";
 
 export default function Deck() {
   return (
-    <>
+    <div className="container">
       <div className="logo-deck">
         <img
           src="../img/logo-pequeno.png"
@@ -22,6 +22,6 @@ export default function Deck() {
       <div className="rodape-deck">
         <p className="texto-concluidos">0/8 CONCLUÍDOS</p>
       </div>
-    </>
+    </div>
   );
 }
