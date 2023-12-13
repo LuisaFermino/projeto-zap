@@ -1,5 +1,6 @@
 import "./App.css";
 import Pergunta from "./Pergunta";
+import Resposta from "./Resposta";
 
 export default function Deck() {
   return (
@@ -14,13 +15,16 @@ export default function Deck() {
       </div>
       <div className="container-deck">
         <div className="deck">
-          <div className="flashcard">
-            <p className="pergunta">Pergunta 1</p>
-            <ion-icon name="play-outline"></ion-icon>
-          </div>
+          <Pergunta />
         </div>
         <div className="deck">
-          <Pergunta />
+          <Resposta />
+        </div>
+        <div className="deck">
+          <div className="flashcard">
+            <p className="pergunta">Pergunta </p>
+            <ion-icon name="play-outline"></ion-icon>
+          </div>
         </div>
       </div>
       <div className="rodape-deck">

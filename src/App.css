@@ -99,14 +99,12 @@ body {
   font-family: "Recursive", sans-serif;
   font-weight: 700;
   font-size: 16px;
-  position: relative;
-  left: 4vw;
+  padding: 15px 15px;
 }
 
 ion-icon {
   font-size: 28px;
-  position: relative;
-  right: 4vw;
+  padding: 10px 10px;
 }
 
 /* Rodapé Deck*/
@@ -142,13 +140,77 @@ ion-icon {
   font-family: "Recursive", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  position: relative;
-  left: 4vw;
-  top: 2vh;
+  padding: 15px 15px;
 }
 
 .virar-pergunta {
   display: flex;
   justify-content: right;
-  padding: 75px 15px;
+  padding: 25px 15px;
+}
+
+/* Resposta */
+
+.container-resposta {
+  background-color: #ffffd4;
+  width: 270px;
+  height: 120px;
+  border-radius: 5px;
+}
+.resposta-card {
+  color: #333333;
+  font-family: "Recursive", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  width: 100%;
+  padding: 15px 15px;
+}
+
+.container-opcoes {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.opcoes {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.texto {
+  color: #ffffff;
+  font-size: 12px;
+  font-family: "Recursive", sans-serif;
+  text-align: center;
+}
+
+.vermelho {
+  background-color: #ff3030;
+  width: 75px;
+  height: 37px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.laranja {
+  background-color: #ff922e;
+  width: 75px;
+  height: 37px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.verde {
+  background-color: #2fbe34;
+  width: 75px;
+  height: 37px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
