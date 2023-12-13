@@ -1,5 +1,4 @@
 import "./App.css";
-import Deck from "./Deck";
 
 export default function TelaInicial() {
   return (

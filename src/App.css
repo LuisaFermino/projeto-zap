@@ -128,3 +128,27 @@ ion-icon {
   font-size: 18px;
   font-weight: 400;
 }
+
+/* Pergunta */
+.container-pergunta {
+  background-color: #ffffd4;
+  width: 270px;
+  height: 120px;
+  border-radius: 5px;
+}
+
+.pergunta-card {
+  color: #333333;
+  font-family: "Recursive", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  position: relative;
+  left: 4vw;
+  top: 2vh;
+}
+
+.virar-pergunta {
+  display: flex;
+  justify-content: right;
+  padding: 75px 15px;
+}
