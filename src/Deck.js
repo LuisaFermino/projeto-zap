@@ -1,7 +1,7 @@
 import "./App.css";
 // import EstruturaOpcoes from "./EstruturaOpcoes";
-import Pergunta from "./Pergunta";
-// import Resposta from "./Resposta";
+// import Pergunta from "./Pergunta";
+import Resposta from "./Resposta";
 
 export default function Deck() {
   return (
@@ -14,10 +14,17 @@ export default function Deck() {
         />
         <p className="titulo-deck">ZapRecall</p>
       </div>
-      {/* <div className="container-deck"><EstruturaOpcoes /></div> */}
+      {/* <div className="container-deck">
+        <EstruturaOpcoes />
+      </div> */}
       <div className="questoes">
-        <div className="container-questoes">
+        {/* <div className="container-questoes">
           <Pergunta />
+        </div> */}
+      </div>
+      <div className="respostas">
+        <div className="container">
+          <Resposta />
         </div>
       </div>
 

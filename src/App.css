@@ -131,7 +131,7 @@ ion-icon {
 /* Pergunta */
 .container-questoes {
   padding-top: 3vh;
-  height: 185vh;
+  height: 182vh;
 }
 
 .questoes {
@@ -161,26 +161,36 @@ ion-icon {
 }
 
 /* Resposta */
+.container {
+  padding-top: 3vh;
+  height: 182vh;
+}
+
+.respostas {
+  display: flex;
+  justify-content: center;
+}
 
 .container-resposta {
   background-color: #ffffd4;
   width: 270px;
   height: 120px;
   border-radius: 5px;
+  margin-top: 1vh;
 }
 .resposta-card {
   color: #333333;
   font-family: "Recursive", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  width: 100%;
-  padding: 15px 15px;
+  font-size: 14px;
+  width: 85vw;
+  padding: 10px 7px;
 }
 
 .container-opcoes {
   display: flex;
   justify-content: center;
-  padding-top: 8px;
+  padding-top: 2vh;
 }
 
 .opcoes {
