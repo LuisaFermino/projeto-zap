@@ -77,7 +77,6 @@ body {
 /* estrutura do deck*/
 .container-deck {
   padding-top: 3vh;
-  height: 120vh;
 }
 .deck {
   display: flex;
@@ -129,10 +128,6 @@ ion-icon {
 }
 
 /* Pergunta */
-.container-questoes {
-  padding-top: 3vh;
-  height: 182vh;
-}
 
 .questoes {
   display: flex;
@@ -163,7 +158,7 @@ ion-icon {
 /* Resposta */
 .container {
   padding-top: 3vh;
-  height: 182vh;
+  height: 140vh;
 }
 
 .respostas {

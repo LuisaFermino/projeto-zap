@@ -19,18 +19,29 @@ export default function EstruturaOpcoes() {
   ));
 }
 
-function Opcao({ posicao, descricao }) {
+function Opcao({ descricao }) {
   const [estado, setEstado] = useState(true);
 
-  return <>{estado ? <Frente /> : <Pergunta descricao={descricao} />}</>;
+  return (
+    <>
+      {estado ? (
+        <Frente setEstado={setEstado} />
+      ) : (
+        <Pergunta descricao={descricao} />
+      )}
+    </>
+  );
 }
 
-function Frente() {
+function Frente({ setEstado }) {
   return (
     <div className="deck">
       <div className="flashcard">
-        <p className="pergunta">Pergunta {posicao}</p>
-        <ion-icon name="play-outline"></ion-icon>
+        <p className="pergunta">Pergunta</p>
+        <ion-icon
+          name="play-outline"
+          onClick={() => setEstado(false)}
+        ></ion-icon>
       </div>
     </div>
   );

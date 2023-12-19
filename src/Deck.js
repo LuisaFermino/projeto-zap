@@ -1,7 +1,5 @@
 import "./App.css";
 import EstruturaOpcoes from "./EstruturaOpcoes";
-// import Pergunta from "./Pergunta";
-// import Resposta from "./Resposta";
 
 export default function Deck() {
   return (
@@ -16,11 +14,6 @@ export default function Deck() {
       </div>
       <div className="container-deck">
         <EstruturaOpcoes />
-      </div>
-      <div className="questoes">
-        {/* <div className="container-questoes">
-          <Pergunta />
-        </div> */}
       </div>
       {/* <div className="respostas">
         <div className="container">
