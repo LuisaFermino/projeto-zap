@@ -1,6 +1,6 @@
 import "./App.css";
 
-export default function TelaInicial() {
+export default function TelaInicial({ setInicio }) {
   return (
     <div className="tela-inicial">
       <div className="container-inicial">
@@ -8,7 +8,9 @@ export default function TelaInicial() {
           <img src="../img/logo.png" alt="logo" className="logo-grande" />
         </div>
         <p className="titulo">ZapRecall</p>
-        <button className="botao-iniciar">Iniciar Recall!</button>
+        <button className="botao-iniciar" onClick={() => setInicio(false)}>
+          Iniciar Recall!
+        </button>
       </div>
     </div>
   );

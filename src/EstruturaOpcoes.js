@@ -1,35 +1,35 @@
+import { useState } from "react";
 import "./App.css";
+import Pergunta from "./Pergunta";
 
 export default function EstruturaOpcoes() {
-  const qtdPerguntas = [
-    {
-      pergunta: "Pergunta 1",
-    },
-    { pergunta: "Pergunta 2" },
-    {
-      pergunta: "Pergunta 3",
-    },
-    { pergunta: "Pergunta 4" },
-    {
-      pergunta: "Pergunta 5",
-    },
-    { pergunta: "Pergunta 6" },
-    {
-      pergunta: "Pergunta 7",
-    },
-    { pergunta: "Pergunta 8" },
+  const perguntas = [
+    { descricao: "O que é JSX?" },
+    { descricao: "O React é _" },
+    { descricao: "Componentes devem iniciar com _" },
+    { descricao: "Podemos colocar _ dentro do JSX " },
+    { descricao: "O ReactDOM nos ajuda _  " },
+    { descricao: "Usamos o npm para _" },
+    { descricao: "Usamos props para _" },
+    { descricao: "Usamos estado (state) para _ " },
   ];
 
-  return qtdPerguntas.map((qtd) => <Opcao pergunta={qtd.pergunta} />);
+  return perguntas.map((pergunta, indice) => (
+    <Opcao key={indice} descricao={pergunta} posicao={indice + 1} />
+  ));
 }
 
-function Opcao(props) {
-  const { pergunta } = props;
+function Opcao({ posicao, descricao }) {
+  const [estado, setEstado] = useState(true);
 
+  return <>{estado ? <Frente /> : <Pergunta descricao={descricao} />}</>;
+}
+
+function Frente() {
   return (
     <div className="deck">
       <div className="flashcard">
-        <p className="pergunta">{pergunta}</p>
+        <p className="pergunta">Pergunta {posicao}</p>
         <ion-icon name="play-outline"></ion-icon>
       </div>
     </div>
