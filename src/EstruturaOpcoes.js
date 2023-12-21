@@ -1,46 +1,73 @@
 import { useState } from "react";
 import "./App.css";
 import Pergunta from "./Pergunta";
+import Resposta from "./Resposta";
 
-export default function EstruturaOpcoes() {
-  const perguntas = [
-    { descricao: "O que é JSX?" },
-    { descricao: "O React é _" },
-    { descricao: "Componentes devem iniciar com _" },
-    { descricao: "Podemos colocar _ dentro do JSX " },
-    { descricao: "O ReactDOM nos ajuda _  " },
-    { descricao: "Usamos o npm para _" },
-    { descricao: "Usamos props para _" },
-    { descricao: "Usamos estado (state) para _ " },
+export default function EstruturaDeck() {
+  const flashcards = [
+    {
+      pergunta: "O que é JSX?",
+      resposta: "Uma extensão de linguagem do JavaScript",
+    },
+    {
+      pergunta: "O React é _",
+      resposta: "uma biblioteca JavaScript para construção de interfaces",
+    },
+    {
+      pergunta: "Componentes devem iniciar com _",
+      resposta: "Letra maiúscula",
+    },
+    { pergunta: "Podemos colocar _ dentro do JSX ", resposta: "expressões" },
+    {
+      pergunta: "O ReactDOM nos ajuda _  ",
+      resposta: "Interagindo com a DOM para colocar componentes React na mesma",
+    },
+    {
+      pergunta: "Usamos o npm para _",
+      resposta: "Gerenciar os pacotes necessários e suas dependências",
+    },
+    {
+      pergunta: "Usamos props para _",
+      resposta: "Passar diferentes informações para componentes ",
+    },
+    {
+      pergunta: "Usamos estado (state) para _ ",
+      resposta:
+        "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
+    },
   ];
 
-  return perguntas.map((pergunta, indice) => (
-    <Opcao key={indice} descricao={pergunta} posicao={indice + 1} />
+  return flashcards.map((indice, descricao, texto) => (
+    <Opcao
+      key={indice}
+      numeracao={indice + 1}
+      pergunta={descricao.pergunta}
+      resposta={texto.pergunta}
+    />
   ));
 }
 
-function Opcao({ descricao }) {
-  const [estado, setEstado] = useState(true);
-
+function Opcao({ pergunta, numeracao }) {
+  const [flashcard, setFlashcard] = useState(true);
   return (
     <>
-      {estado ? (
-        <Frente setEstado={setEstado} />
+      {flashcard ? (
+        <Frente setFlashcard={setFlashcard} numeracao={numeracao} />
       ) : (
-        <Pergunta descricao={descricao} />
+        <Pergunta pergunta={pergunta} />
       )}
     </>
   );
 }
 
-function Frente({ setEstado }) {
+function Frente({ setFlashcard, numeracao }) {
   return (
     <div className="deck">
       <div className="flashcard">
-        <p className="pergunta">Pergunta</p>
+        <p className="pergunta">Pergunta {numeracao}</p>
         <ion-icon
           name="play-outline"
-          onClick={() => setEstado(false)}
+          onClick={() => setFlashcard(false)}
         ></ion-icon>
       </div>
     </div>
