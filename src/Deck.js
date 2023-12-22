@@ -15,12 +15,6 @@ export default function Deck() {
       <div className="container-deck">
         <EstruturaOpcoes />
       </div>
-      {/* <div className="respostas">
-        <div className="container">
-          <Resposta />
-        </div>
-      </div> */}
-
       <div className="rodape-deck">
         <p className="texto-concluidos">0/8 CONCLUÍDOS</p>
       </div>

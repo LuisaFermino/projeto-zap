@@ -11,7 +11,7 @@ export default function EstruturaDeck() {
     },
     {
       pergunta: "O React é _",
-      resposta: "uma biblioteca JavaScript para construção de interfaces",
+      resposta: "Uma biblioteca JavaScript para construção de interfaces",
     },
     {
       pergunta: "Componentes devem iniciar com _",
@@ -24,7 +24,7 @@ export default function EstruturaDeck() {
     },
     {
       pergunta: "Usamos o npm para _",
-      resposta: "Gerenciar os pacotes necessários e suas dependências",
+      resposta: "Gerenciar pacotes necessários e suas dependências",
     },
     {
       pergunta: "Usamos props para _",
@@ -33,31 +33,29 @@ export default function EstruturaDeck() {
     {
       pergunta: "Usamos estado (state) para _ ",
       resposta:
-        "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
+        "Dizer para o React quais informações devem renderizar a tela novamente",
     },
   ];
 
-  return flashcards.map((indice, descricao, texto) => (
+  return flashcards.map((flashcard, indice) => (
     <Opcao
       key={indice}
       numeracao={indice + 1}
-      pergunta={descricao.pergunta}
-      resposta={texto.pergunta}
+      pergunta={flashcard.pergunta}
+      resposta={flashcard.resposta}
     />
   ));
 }
 
-function Opcao({ pergunta, numeracao }) {
-  const [flashcard, setFlashcard] = useState(true);
-  return (
-    <>
-      {flashcard ? (
-        <Frente setFlashcard={setFlashcard} numeracao={numeracao} />
-      ) : (
-        <Pergunta pergunta={pergunta} />
-      )}
-    </>
-  );
+function Opcao({ pergunta, numeracao, resposta }) {
+  const [flashcard, setFlashcard] = useState(0);
+
+  const cards = {
+    0: <Frente setFlashcard={setFlashcard} numeracao={numeracao} />,
+    1: <Pergunta setFlashcard={setFlashcard} pergunta={pergunta} />,
+    2: <Resposta setFlashcard={setFlashcard} resposta={resposta} />,
+  };
+  return <>{cards[flashcard]}</>;
 }
 
 function Frente({ setFlashcard, numeracao }) {
@@ -67,7 +65,7 @@ function Frente({ setFlashcard, numeracao }) {
         <p className="pergunta">Pergunta {numeracao}</p>
         <ion-icon
           name="play-outline"
-          onClick={() => setFlashcard(false)}
+          onClick={() => setFlashcard(1)}
         ></ion-icon>
       </div>
     </div>
