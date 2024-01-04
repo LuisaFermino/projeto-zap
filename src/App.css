@@ -223,3 +223,18 @@ ion-icon {
   justify-content: center;
   display: flex;
 }
+
+.red {
+  text-decoration: line-through;
+  color: red;
+}
+
+.orange {
+  text-decoration: line-through;
+  color: orange;
+}
+
+.green {
+  text-decoration: line-through;
+  color: green;
+}

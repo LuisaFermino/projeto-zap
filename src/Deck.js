@@ -1,7 +1,9 @@
+import { useState } from "react";
 import "./App.css";
 import EstruturaOpcoes from "./EstruturaOpcoes";
 
 export default function Deck() {
+  const [valor, setValor] = useState(0);
   return (
     <div className="container">
       <div className="logo-deck">
@@ -13,10 +15,10 @@ export default function Deck() {
         <p className="titulo-deck">ZapRecall</p>
       </div>
       <div className="container-deck">
-        <EstruturaOpcoes />
+        <EstruturaOpcoes setValor={setValor} valor={valor} />
       </div>
       <div className="rodape-deck">
-        <p className="texto-concluidos">0/8 CONCLUÍDOS</p>
+        <p className="texto-concluidos">{valor}/8 CONCLUÍDOS</p>
       </div>
     </div>
   );

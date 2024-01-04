@@ -3,7 +3,7 @@ import "./App.css";
 import Pergunta from "./Pergunta";
 import Resposta from "./Resposta";
 
-export default function EstruturaDeck() {
+export default function EstruturaOpcoes({ setValor, valor }) {
   const flashcards = [
     {
       pergunta: "O que é JSX?",
@@ -43,26 +43,44 @@ export default function EstruturaDeck() {
       numeracao={indice + 1}
       pergunta={flashcard.pergunta}
       resposta={flashcard.resposta}
+      setValor={setValor}
+      valor={valor}
     />
   ));
 }
 
-function Opcao({ pergunta, numeracao, resposta }) {
+function Opcao({ pergunta, numeracao, resposta, setValor, valor }) {
   const [flashcard, setFlashcard] = useState(0);
+  const [status, setStatus] = useState("");
 
   const cards = {
-    0: <Frente setFlashcard={setFlashcard} numeracao={numeracao} />,
+    0: (
+      <Frente
+        setFlashcard={setFlashcard}
+        numeracao={numeracao}
+        status={status}
+      />
+    ),
     1: <Pergunta setFlashcard={setFlashcard} pergunta={pergunta} />,
-    2: <Resposta setFlashcard={setFlashcard} resposta={resposta} />,
+    2: (
+      <Resposta
+        setFlashcard={setFlashcard}
+        setStatus={setStatus}
+        resposta={resposta}
+        setValor={setValor}
+        valor={valor}
+      />
+    ),
   };
   return <>{cards[flashcard]}</>;
 }
 
-function Frente({ setFlashcard, numeracao }) {
+function Frente({ setFlashcard, numeracao, status }) {
+  console.log(status);
   return (
     <div className="deck">
       <div className="flashcard">
-        <p className="pergunta">Pergunta {numeracao}</p>
+        <p className={`pergunta ${status}`}>Pergunta {numeracao}</p>
         <ion-icon
           name="play-outline"
           onClick={() => setFlashcard(1)}
