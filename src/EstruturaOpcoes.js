@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { IoPlayOutline } from "react-icons/io5";
+import { IoCheckmarkCircle } from "react-icons/io5";
+import { IoCloseCircle } from "react-icons/io5";
+import { IoHelpCircle } from "react-icons/io5";
 import "./App.css";
 import Pergunta from "./Pergunta";
 import Resposta from "./Resposta";
@@ -52,13 +56,14 @@ export default function EstruturaOpcoes({ setValor, valor }) {
 function Opcao({ pergunta, numeracao, resposta, setValor, valor }) {
   const [flashcard, setFlashcard] = useState(0);
   const [status, setStatus] = useState("");
-
+  const [alteraIcone, setAlteraIcone] = useState(0);
   const cards = {
     0: (
       <Frente
         setFlashcard={setFlashcard}
         numeracao={numeracao}
         status={status}
+        alteraIcone={alteraIcone}
       />
     ),
     1: <Pergunta setFlashcard={setFlashcard} pergunta={pergunta} />,
@@ -69,22 +74,25 @@ function Opcao({ pergunta, numeracao, resposta, setValor, valor }) {
         resposta={resposta}
         setValor={setValor}
         valor={valor}
+        setAlteraIcone={setAlteraIcone}
       />
     ),
   };
   return <>{cards[flashcard]}</>;
 }
 
-function Frente({ setFlashcard, numeracao, status }) {
-  console.log(status);
+function Frente({ setFlashcard, numeracao, status, alteraIcone }) {
+  const icons = {
+    0: <IoPlayOutline className="icon" onClick={() => setFlashcard(1)} />,
+    1: <IoCloseCircle className="icon red" />,
+    2: <IoHelpCircle className="icon orange" />,
+    3: <IoCheckmarkCircle className="icon green" />,
+  };
   return (
     <div className="deck">
       <div className="flashcard">
         <p className={`pergunta ${status}`}>Pergunta {numeracao}</p>
-        <ion-icon
-          name="play-outline"
-          onClick={() => setFlashcard(1)}
-        ></ion-icon>
+        {icons[alteraIcone]}
       </div>
     </div>
   );

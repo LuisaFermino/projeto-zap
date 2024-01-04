@@ -6,11 +6,13 @@ export default function Resposta({
   setStatus,
   setValor,
   valor,
+  setAlteraIcone,
 }) {
-  function recebeCores(cor) {
+  function atualizaFlashcard(cor, icone) {
     setFlashcard(0);
     setStatus(cor);
     setValor(valor + 1);
+    setAlteraIcone(icone);
   }
 
   return (
@@ -19,13 +21,22 @@ export default function Resposta({
         <p className="resposta-card">{resposta}</p>
         <div className="container-opcoes">
           <div className="opcoes">
-            <p className="vermelho texto" onClick={() => recebeCores("red")}>
+            <p
+              className="vermelho texto"
+              onClick={() => atualizaFlashcard("red", 1)}
+            >
               Não lembrei!
             </p>
-            <p className="laranja texto" onClick={() => recebeCores("orange")}>
+            <p
+              className="laranja texto"
+              onClick={() => atualizaFlashcard("orange", 2)}
+            >
               Quase não lembrei!
             </p>
-            <p className="verde texto" onClick={() => recebeCores("green")}>
+            <p
+              className="verde texto"
+              onClick={() => atualizaFlashcard("green", 3)}
+            >
               Zap!
             </p>
           </div>

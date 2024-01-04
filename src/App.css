@@ -103,8 +103,8 @@ body {
   padding: 15px 15px;
 }
 
-ion-icon {
-  font-size: 28px;
+.icon {
+  font-size: 46px;
   padding: 10px 10px;
 }
 
@@ -226,15 +226,15 @@ ion-icon {
 
 .red {
   text-decoration: line-through;
-  color: red;
+  color: #ff3030;
 }
 
 .orange {
   text-decoration: line-through;
-  color: orange;
+  color: #ff922e;
 }
 
 .green {
   text-decoration: line-through;
-  color: green;
+  color: #2fbe34;
 }
