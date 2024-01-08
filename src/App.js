@@ -7,7 +7,11 @@ function App() {
   const [inicio, setInicio] = useState(true);
   return (
     <div className="App">
-      {inicio ? <TelaInicial setInicio={setInicio} /> : <Deck />}
+      {inicio ? (
+        <TelaInicial setInicio={setInicio} />
+      ) : (
+        <Deck setInicio={setInicio} />
+      )}
     </div>
   );
 }

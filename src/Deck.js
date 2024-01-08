@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import EstruturaOpcoes from "./EstruturaOpcoes";
 
-export default function Deck() {
+export default function Deck({ setInicio }) {
   const [valor, setValor] = useState(0);
   const [erro, setErro] = useState(0);
   return (
@@ -26,21 +26,35 @@ export default function Deck() {
 
       <div className="rodape-deck">
         {valor === 8 && erro < 1 ? (
-          <div>
-            <p className="mensagem-final">Parabéns!</p>
-            <p className="resultado">Você não esqueceu de nenhum flashcard!</p>
+          <div className="container-resultados">
+            <div className="mensagem-parabens">
+              <p className="mensagem-final">🥳 Parabéns!</p>
+              <p className="resultado">
+                Você não esqueceu de nenhum flashcard!
+              </p>
+              <p className="texto-concluidos">{valor}/8 CONCLUÍDOS</p>
+              <button className="reiniciar" onClick={() => setInicio(true)}>
+                REINICIAR RECALL
+              </button>
+            </div>
           </div>
         ) : valor === 8 && erro >= 1 ? (
-          <div>
-            <p className="mensagem-final">Putz...</p>
-            <p className="resultado">
-              Ainda faltam alguns... Mas não desanime!
-            </p>
+          <div className="container-resultados">
+            <div className="mensagem-parabens">
+              <p className="mensagem-final">😥 Putz...</p>
+              <p className="resultado">
+                Ainda faltam alguns... Mas não desanime!
+              </p>
+              <p className="texto-concluidos">{valor}/8 CONCLUÍDOS</p>
+              <button className="reiniciar" onClick={() => setInicio(true)}>
+                REINICIAR RECALL
+              </button>
+            </div>
           </div>
         ) : (
           ""
         )}
-        <p className="texto-concluidos">{valor}/8 CONCLUÍDOS</p>
+        <p className="concluidos">{valor}/8 CONCLUÍDOS</p>
       </div>
     </div>
   );
