@@ -7,12 +7,18 @@ export default function Resposta({
   setValor,
   valor,
   setAlteraIcone,
+  setErro,
+  erro,
 }) {
   function atualizaFlashcard(cor, icone) {
     setFlashcard(0);
     setStatus(cor);
     setValor(valor + 1);
     setAlteraIcone(icone);
+
+    if (cor === "red") {
+      setErro(erro + 1);
+    }
   }
 
   return (

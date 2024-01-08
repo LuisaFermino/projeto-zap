@@ -7,7 +7,7 @@ import "./App.css";
 import Pergunta from "./Pergunta";
 import Resposta from "./Resposta";
 
-export default function EstruturaOpcoes({ setValor, valor }) {
+export default function EstruturaOpcoes({ setValor, valor, setErro, erro }) {
   const flashcards = [
     {
       pergunta: "O que é JSX?",
@@ -49,11 +49,21 @@ export default function EstruturaOpcoes({ setValor, valor }) {
       resposta={flashcard.resposta}
       setValor={setValor}
       valor={valor}
+      setErro={setErro}
+      erro={erro}
     />
   ));
 }
 
-function Opcao({ pergunta, numeracao, resposta, setValor, valor }) {
+function Opcao({
+  pergunta,
+  numeracao,
+  resposta,
+  setValor,
+  valor,
+  setErro,
+  erro,
+}) {
   const [flashcard, setFlashcard] = useState(0);
   const [status, setStatus] = useState("");
   const [alteraIcone, setAlteraIcone] = useState(0);
@@ -75,6 +85,8 @@ function Opcao({ pergunta, numeracao, resposta, setValor, valor }) {
         setValor={setValor}
         valor={valor}
         setAlteraIcone={setAlteraIcone}
+        setErro={setErro}
+        erro={erro}
       />
     ),
   };
